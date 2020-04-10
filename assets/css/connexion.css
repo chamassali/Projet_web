@@ -62,7 +62,7 @@ body {
 
 #login-button {
   position: relative;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 15px 30px;
   border: none;
   border-radius: 30px;
@@ -82,7 +82,7 @@ body {
 
 #sign-up-link {
   position: relative;
-  margin: auto;
+  margin: 20px auto;
   text-decoration: none;
   color: black;
 }
@@ -95,5 +95,11 @@ body {
   position: relative;
   margin: 0 auto;
   height: 30px;
+  color: red;
+}
+
+#error-message {
+  position: relative;
+  margin: auto;
   color: red;
 }

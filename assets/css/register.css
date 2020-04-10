@@ -94,3 +94,8 @@ body {
     color: #2fcc76;
   }
   
+  #error-message {
+    position: relative;
+    margin: auto;
+    color: red;
+  }
