@@ -77,7 +77,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                         <?php
                         if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']); {
                         ?>
-                            <a class="disconnect-edit" href="#">Modifier mon profil</a>
+                            <a class="disconnect-edit" href="profilEdit.php">Modifier mon profil</a>
                             <a class="disconnect-edit" href="deconnexion.php">Se déconnecter</a>
                         <?php
                         }

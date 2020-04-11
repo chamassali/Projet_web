@@ -1,18 +1,21 @@
 <?php
 
 if (isset($_POST['envoyer'])) {
-    
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $mailFrom = $_POST['mail'];
-    $message = $_POST['message'];
-    $sujet = $_POST['sujet'];
+    if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['mail']) and !empty($_POST['message']) and !empty($_POST['sujet'])) {
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $mailFrom = $_POST['mail'];
+        $message = $_POST['message'];
+        $sujet = $_POST['sujet'];
 
-    $mailTo = "chamasahmadali@gmail.com";
-    $headers = "From: ".$mailFrom;
-    $txt = "Email : " .$mailFrom. "\n\nSubject : " .$sujet. "\n\n" . "Name : ".$nom. "\n\nMessage : ".$message;
+        $mailTo = "chamasahmadali@gmail.com";
+        $headers = "From: " . $mailFrom;
+        $txt = "Email : " . $mailFrom . "\n\nSubject : " . $sujet . "\n\n" . "Name : " . $nom . "\n\nMessage : " . $message;
 
-    mail($mailTo, $sujet, $txt, $headers);
+        mail($mailTo, $sujet, $txt, $headers);
+    } else {
+        $erreur = "Tous les champs doivent être rempli !";
+    }
 }
 
 ?>
@@ -62,6 +65,10 @@ if (isset($_POST['envoyer'])) {
             <input required type="text" name="sujet" class="formulaire" placeholder="Sujet">
 
             <textarea name="message" class="formulaire" placeholder="Votre message" required></textarea>
+            
+            <div id="error-message"><?php if (isset($erreur)) {
+                                        echo $erreur;
+                                    } ?></div>
 
             <button type="submit" name="envoyer" id="bouton-submit">Envoyer</button>
 
