@@ -1,4 +1,6 @@
 <?php
+session_start();
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=users_register', 'root', '');
 
 if (isset($_POST['envoyer'])) {
     if (!empty($_POST['nom']) and !empty($_POST['prenom']) and !empty($_POST['mail']) and !empty($_POST['message']) and !empty($_POST['sujet'])) {
@@ -35,21 +37,13 @@ if (isset($_POST['envoyer'])) {
 <body>
     <div id="wrapper">
 
-        <nav id="navbar-container">
-
-            <div id="logo-container">
-                <a href="../index.html"><img id="page-background-logo" src="../assets/images/logo.png" alt=""></a>
-            </div>
-
-            <div id="navbar">
-                <ul>
-                    <li><a href="../index.php">Acceuil</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="connexion.php">Connexion</a></li>
-                    <li id="user-icon-container"><a href="pages/profil.php"><i class="fas fa-user user-icon"></i></a></li>
-                </ul>
-            </div>
-        </nav>
+        <?php
+        if (isset($_SESSION['id'])) {
+            include "../includes/navbarCo.php";
+        } else {
+            include "../includes/navbar.php";
+        }
+        ?>
 
         <h1>Contact Me</h1>
         <div id="bar-separation"></div>
@@ -65,7 +59,7 @@ if (isset($_POST['envoyer'])) {
             <input required type="text" name="sujet" class="formulaire" placeholder="Sujet">
 
             <textarea name="message" class="formulaire" placeholder="Votre message" required></textarea>
-            
+
             <div id="error-message"><?php if (isset($erreur)) {
                                         echo $erreur;
                                     } ?></div>

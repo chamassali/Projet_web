@@ -9,6 +9,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
     $requser = $bdd->prepare("SELECT * FROM users where id = ?");
     $requser->execute(array($getId));
     $userInfo = $requser->fetch();
+    $_SESSION['id'] = $userInfo['id'];
 
 ?>
 
@@ -22,8 +23,6 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
         <title>Connexion</title>
         <script src="https://kit.fontawesome.com/e7e038a132.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../../css/connexion.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/profil.css">
         <link rel="stylesheet" href="../assets/css/navbar.css">
 
@@ -33,22 +32,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
         <div id="wrapper">
 
-            <nav id="navbar-container">
-
-                <div id="logo-container">
-                    <a href="index.html"><img id="page-background-logo" src="../assets/images/logo.png" alt=""></a>
-                </div>
-
-                <div id="navbar">
-                    <ul>
-                        <li><a href="../index.php">Acceuil</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                        <li><a href="connexion.php">Connexion</a></li>
-                        <li id="user-icon-container"><a class="active" href="#"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-
-            </nav>
+            <?php
+            if (isset($_SESSION['id'])) {
+                include "../includes/navbarCo.php";
+            } else {
+                include "../includes/navbar.php";
+            }
+            ?>
 
             <div id="sub-user-container">
                 <div id="user-info">
@@ -65,24 +55,24 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
                 <div id="user-info">
 
-                <div class="label-placement">
+                    <div class="label-placement">
                         <label for="email_display" class="label">Votre adresse mail</label>
                         <div class="login-form" name="email-display" id="email-display"><?php echo $userInfo['mail']; ?></div>
                     </div>
 
                 </div>
 
-                
+
                 <div id="disconnect-edit-container">
-                        <?php
-                        if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']); {
-                        ?>
-                            <a class="disconnect-edit" href="profilEdit.php">Modifier mon profil</a>
-                            <a class="disconnect-edit" href="deconnexion.php">Se déconnecter</a>
-                        <?php
-                        }
-                        ?>
-                    </div>
+                    <?php
+                    if (isset($_SESSION['id']) and $userInfo['id'] == $_SESSION['id']); {
+                    ?>
+                        <a class="disconnect-edit" href="profilEdit.php">Modifier mon profil</a>
+                        <a class="disconnect-edit" href="deconnexion.php">Se déconnecter</a>
+                    <?php
+                    }
+                    ?>
+                </div>
 
             </div>
 

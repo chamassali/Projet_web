@@ -59,21 +59,14 @@ if (isset($_POST['forminscription'])) {
 <body>
     <div id="wrapper">
 
-        <nav id="navbar-container">
+        <?php
+        if (isset($_SESSION['id'])) {
+            include "../includes/navbarCo.php";
+        } else {
+            include "../includes/navbar.php";
+        }
+        ?>
 
-            <div id="logo-container">
-                <a href="index.html"><img id="page-background-logo" src="../assets/images/logo.png" alt=""></a>
-            </div>
-
-            <div id="navbar">
-                <ul>
-                    <li><a href="../index.php">Acceuil</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="connexion.php">Connexion</a></li>
-                    <li id="user-icon-container"><a href="pages/profil.php"><i class="fas fa-user user-icon"></i></a></li>
-                </ul>
-            </div>
-        </nav>
 
         <div id="center-wrapper">
 

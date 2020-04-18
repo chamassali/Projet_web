@@ -21,12 +21,12 @@ if (isset($_SESSION['id'])) {
         header('Location: profil.php?id=' . $_SESSION['id']);
     }
 
-    if(isset($_POST['newMail']) AND !empty($_POST['newMail']) AND $_POST['newMail'] != $user['mail']) {
+    if (isset($_POST['newMail']) and !empty($_POST['newMail']) and $_POST['newMail'] != $user['mail']) {
         $newMail = htmlspecialchars($_POST['newMail']);
         $insertmail = $bdd->prepare("UPDATE users SET mail = ? WHERE id = ?");
         $insertmail->execute(array($newMail, $_SESSION['id']));
-        header('Location: profil.php?id='.$_SESSION['id']);
-     }
+        header('Location: profil.php?id=' . $_SESSION['id']);
+    }
 
     if (isset($_POST['newMdp1']) and !empty($_POST['newMdp1']) and isset($_POST['newMdp2']) and !empty($_POST['newMdp2'])) {
         $mdp1 = sha1($_POST['newMdp1']);
@@ -58,22 +58,14 @@ if (isset($_SESSION['id'])) {
 
         <div id="wrapper">
 
-            <nav id="navbar-container">
+            <?php
+            if (isset($_SESSION['id'])) {
+                include "../includes/navbarCo.php";
+            } else {
+                include "../includes/navbar.php";
+            }
+            ?>
 
-                <div id="logo-container">
-                    <a href="index.html"><img id="page-background-logo" src="../assets/images/logo.png" alt=""></a>
-                </div>
-
-                <div id="navbar">
-                    <ul>
-                        <li><a href="../index.php">Acceuil</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                        <li><a href="connexion.php">Connexion</a></li>
-                        <li id="user-icon-container"><a class="active" href="#"><i class="fas fa-user user-icon"></i></a></li>
-                    </ul>
-                </div>
-
-            </nav>
 
 
 
