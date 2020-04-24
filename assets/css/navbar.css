@@ -24,7 +24,6 @@ body {
     margin: auto;
     margin-left: 10px;
     border: none;
- 
 }
 
 #page-background-logo {
@@ -75,11 +74,71 @@ li a.active {
     margin-right: 20px;
 }
 
+.menu {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    border-bottom: none;
+}
+
 .user-icon {
     position: relative;
     color: white;
     font-size: 20px;
     cursor: pointer;
     border-bottom: none;
-
 }
+
+#search-bar-container {
+    position: absolute;
+    top: 50%;
+    left: 160px;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.search-form {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    margin-left: 0px;
+    border: 0;
+    border-radius: 10px;
+    padding: 17px 20px;
+    outline: none;
+    color: rgb(160, 160, 160);
+    text-align: center;
+    transition: 0.5s;
+}
+
+#search-icon-container {
+    position: relative;
+    margin: auto;
+    margin-right: 5px;
+}
+
+.search-icon {
+    position: relative;
+    color: #2fcc76;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: none;
+    transition: 0.5s;
+}
+
+.search-icon:hover{
+    transform: scale(1.1);
+}
+
+#search-submit {
+    position: relative;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+}
+

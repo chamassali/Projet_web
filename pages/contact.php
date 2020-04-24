@@ -31,21 +31,21 @@ if (isset($_POST['envoyer'])) {
     <script src="https://kit.fontawesome.com/e7e038a132.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../assets/css/contact.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
-    <title>Register</title>
+    <title>Support</title>
 </head>
 
 <body>
     <div id="wrapper">
 
         <?php
-        if (isset($_SESSION['id'])) {
+        if (isset($_SESSION['id_users'])) {
             include "../includes/navbarCo.php";
         } else {
             include "../includes/navbar.php";
         }
         ?>
 
-        <h1>Contact Me</h1>
+        <h1>Contacter le support</h1>
         <div id="bar-separation"></div>
 
         <form id="formulaire-contact" action="" method="post">

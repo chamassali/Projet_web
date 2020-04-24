@@ -85,10 +85,12 @@ body {
   margin: 20px auto;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 
 #sign-up-link:hover {
   color: #2fcc76;
+  
 }
 
 #error-message {
@@ -98,8 +100,3 @@ body {
   color: red;
 }
 
-#error-message {
-  position: relative;
-  margin: auto;
-  color: red;
-}

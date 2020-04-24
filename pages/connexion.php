@@ -16,10 +16,10 @@ if (isset($_POST['form_connect'])) {
         $result = $requser->fetch();
 
         if ($userExist == 1 && password_verify($_POST['mdp_connect'], $result['motdepasse'])) {
-            $_SESSION['id'] = $result['id'];
+            $_SESSION['id_users'] = $result['id_users'];
             $_SESSION['pseudo'] = $result['pseudo'];
             $_SESSION['mail'] = $result['mail'];
-            header("Location: profil.php?id=" . $_SESSION['id']);
+            header("Location: profil.php?id_users=" . $_SESSION['id_users']);
         } else {
             $erreur = "Mot de passe ou mail non correct !";
         }
@@ -50,7 +50,7 @@ if (isset($_POST['form_connect'])) {
     <div id="wrapper">
 
         <?php
-        if (isset($_SESSION['id'])) {
+        if (isset($_SESSION['id_users'])) {
             include "../includes/navbarCo.php";
         } else {
             include "../includes/navbar.php";
@@ -75,7 +75,7 @@ if (isset($_POST['form_connect'])) {
 
                     <input type="submit" name="form_connect" value="Se connecter" id="login-button">
 
-                    <a id="sign-up-link" href="register.php">Not a user ? Sign up now !</a>
+                    <a id="sign-up-link" href="register.php">Pas encore un utilisateur ? <br> S'inscrire maintenant !</a>
 
                 </form>
             </div>

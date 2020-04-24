@@ -1,0 +1,24 @@
+#wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.form-container {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-field {
+    color: white;
+   
+}
+
+.form-control {
+    width: 500px;
+}

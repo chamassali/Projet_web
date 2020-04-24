@@ -60,7 +60,7 @@ if (isset($_POST['forminscription'])) {
     <div id="wrapper">
 
         <?php
-        if (isset($_SESSION['id'])) {
+        if (isset($_SESSION['id_users'])) {
             include "../includes/navbarCo.php";
         } else {
             include "../includes/navbar.php";

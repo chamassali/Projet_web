@@ -1,114 +1,113 @@
 #wrapper {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-h1 {
-    position: relative;
-    margin: 100px auto;
-    margin-bottom: 0px;
-    transform: translateY(-30%);
-    opacity: 0;
-    text-align: center;
-    color: white;
-    animation-name: titre;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-  }
-  
-  
-  
-  #bar-separation {
-    position: relative;
-    width: 0px;
-    height: 10px;
-    background: #2fcc76;
-    margin: 5px auto;  
-    animation-name: barseparation;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  
-  }
-  
-  #formulaire-contact {
-    position: relative;
-    display: block;
-    width: 30%;
-    box-sizing: border-box;
-    margin: 20px auto;
-    padding: 0 10px;
-    overflow: hidden;
-    opacity: 0;
-    animation-name: formulairecontact;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    
-  }
-  
-  .formulaire {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 16px 0;
-    border: 0;
-    border-radius: 10px;
-    background:white;
-    padding: 20px 40px;
-    outline: none;
-    color:black;
-    transition: 0.5s;
-  
-  }
-  
-  .formulaire:focus {
-    box-shadow: 0 0 10px 4px #25a75f;
-  } 
-  
-  #bouton-submit {
-  
-    float: right;
-    border: 0;
-    background: #2fcc76;
-    color: #fff;
-    padding: 12px 50px;
-    border-radius: 20px;
-    cursor: pointer;
-  
-  
-  }
-  
-  #bouton-submit:hover {
-    background-color: #25a75f;
-  }
-  
-  
-  @keyframes titre {
-  
-  from {opacity: 0;}
-  to { opacity: 1;}
-  
-  }
-  
-  @keyframes barseparation {
-  
-    from {width: 0;}
-    to { width: 130px;}
-    
-  }
-  
-  @keyframes formulairecontact {
-  
-    from {opacity: 0;}
-    to { opacity: 1;}
-      
-  }
 
-  #error-message {
-    position: relative;
-    margin: auto;
-    color: red;
+h1 {
+  position: relative;
+  margin: 100px auto;
+  margin-bottom: 0px;
+  transform: translateY(-30%);
+  opacity: 0;
+  text-align: center;
+  color: white;
+  animation-name: titre;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+#bar-separation {
+  position: relative;
+  width: 0px;
+  height: 10px;
+  background: #2fcc76;
+  margin: 5px auto;
+  animation-name: barseparation;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#formulaire-contact {
+  position: relative;
+  display: block;
+  width: 400px;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 0 10px;
+  overflow: hidden;
+  opacity: 0;
+  animation-name: formulairecontact;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.formulaire {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  border-radius: 10px;
+  background: white;
+  padding: 20px 40px;
+  outline: none;
+  color: black;
+  transition: 0.5s;
+}
+
+.formulaire:focus {
+  box-shadow: 0 0 10px 4px #25a75f;
+}
+
+#bouton-submit {
+  float: right;
+  border: 0;
+  background: #2fcc76;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#bouton-submit:hover {
+  background-color: #25a75f;
+}
+
+@keyframes titre {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes barseparation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 130px;
+  }
+}
+
+@keyframes formulairecontact {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#error-message {
+  position: relative;
+  margin: auto;
+  color: red;
+}
