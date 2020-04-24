@@ -9,7 +9,10 @@ $reqAnnonce = $bdd->query("SELECT * FROM annonces");
 <html lang="en">
 
 <head>
-    
+
+    <meta name="description" content="Vente de téléphones">
+    <meta name="keywords" content="Vente, téléphones, technologie">
+
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/e7e038a132.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +47,7 @@ $reqAnnonce = $bdd->query("SELECT * FROM annonces");
                     <div id="annonce-container">
 
                         <div id="image-container">
-                            <img src="../assets/images/<?php echo $variable['image'] ?>" alt="" id="image">
+                            <img src="../assets/images/<?php echo $variable['image'] ?>" alt="Image annonce" id="image">
                         </div>
 
                         <div id="vertical-bar"></div>

@@ -43,7 +43,7 @@ if (isset($_SESSION['id_users'])) {
     <html>
 
     <head>
-        <title>TUTO PHP</title>
+        <title>Edition Profil</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../assets/css/profilEdit.css">
         <link rel="stylesheet" href="../assets/css/navbar.css">

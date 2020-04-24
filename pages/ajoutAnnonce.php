@@ -22,33 +22,7 @@ if (isset($_POST['ajoutAnnonce'])) {
     }
 }
 
-
-
-
-
-
-// ----------MODIFIER----------
-if (isset($_POST['Modifier'])) {
-
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=loto_php;charset=utf8', 'root', '');
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-
-    $NameToUpdate = $_POST["nom_a_modif"];
-    $nom = $_POST["nom"];
-
-    $req = $bdd->prepare("UPDATE equipe SET nom = '$nom' WHERE nom = '$NameToUpdate'");
-    $req->execute(['nom' => $nom, 'nom' => $NameToUpdate]);
-
-    $req->closeCursor();
-    header('Location: /?page=homePage');
-}
-
-
-
-// 
+ 
 ?>
 
 <html lang="en">
@@ -56,7 +30,7 @@ if (isset($_POST['Modifier'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ajout d'annonces</title>
     <link rel="stylesheet" href="../assets/css/ajoutAnnonce.css">
     <!-- Axentix CSS minified version -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.2/dist/css/axentix.min.css">

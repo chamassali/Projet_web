@@ -24,7 +24,7 @@ if (isset($_GET['id_users']) and $_GET['id_users'] > 0) {
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Connexion</title>
+        <title>Profil</title>
 
         <link rel="stylesheet" href="../../css/connexion.css">
         <link rel="stylesheet" href="../assets/css/profil.css">
@@ -49,9 +49,9 @@ if (isset($_GET['id_users']) and $_GET['id_users'] > 0) {
 
         <div id="wrapper">
 
-
+        
             <div id="center-wrapper">
-
+        
                 <div id="annonce-main-container">
 
                     <?php
@@ -64,7 +64,7 @@ if (isset($_GET['id_users']) and $_GET['id_users'] > 0) {
                             <div id="annonce-container">
 
                                 <div id="image-container">
-                                    <img src="../assets/images/<?php echo $variable['image'] ?>" alt="" id="image">
+                                    <img src="../assets/images/<?php echo $variable['image'] ?>" alt="Image Annonce" id="image">
                                 </div>
 
                                 <div id="vertical-bar"></div>
